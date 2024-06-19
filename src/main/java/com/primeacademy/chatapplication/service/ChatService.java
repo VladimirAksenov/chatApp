@@ -40,7 +40,6 @@ public class ChatService {
         User receiver = userRepository.findByUsername(receiverUsername)
                 .orElseThrow(() -> new RuntimeException("Receiver not found"));
 
-        // Check if a chat room already exists for these users
         Optional<ChatRoom> existingChatRoom = chatRoomRepository.findAll().stream()
                 .filter(chatRoom -> chatRoom.getUsers().contains(sender) && chatRoom.getUsers().contains(receiver))
                 .findFirst();
@@ -75,10 +74,7 @@ public class ChatService {
                 .map(user -> new UserDTO(
                         user.getId(),
                         user.getUsername(),
-                        user.isActive(),
-                        user.getChatRooms(),
-                        user.getSentMessages(),
-                        user.getReceivedMessages()
+                        user.isActive()
                 ))
                 .collect(Collectors.toList());
     }

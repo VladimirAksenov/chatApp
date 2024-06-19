@@ -1,5 +1,7 @@
 package com.primeacademy.chatapplication.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,13 +27,16 @@ public class User {
 
     @ManyToMany(mappedBy = "users")
     @ToString.Exclude
+    @JsonBackReference
     private Set<ChatRoom> chatRooms;
 
     @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
+    @JsonIgnore
     private Set<Message> sentMessages;
 
     @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL, orphanRemoval = true)
     @ToString.Exclude
+    @JsonIgnore
     private Set<Message> receivedMessages;
 }
