@@ -26,6 +26,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/register", "/auth/login").permitAll()
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll() // Доступ до Swagger UI и OpenAPI спецификации
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

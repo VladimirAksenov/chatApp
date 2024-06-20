@@ -1,6 +1,6 @@
 package com.primeacademy.chatapplication.dto;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,9 +9,15 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserDTO {
+
+    @JsonIgnore
     private Long id;
+
     private String username;
+
+    @JsonIgnore
     private String password;
+
     private boolean active;
 
     public UserDTO(Long id, String username, boolean active) {
