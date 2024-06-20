@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginProcessingUrl("/auth/login")
                         .successHandler((request, response, authentication) -> response.setStatus(HttpServletResponse.SC_OK))
-                        .failureHandler((request, response, exception) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Authentication failed"))
+                        .failureHandler((request, response, exception) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Authentication failed"))
                         .permitAll()
                 )
                 .logout(LogoutConfigurer::permitAll);
