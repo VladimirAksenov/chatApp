@@ -24,7 +24,8 @@
 ## Инструкции по настройке и запуску.
 
 * git clone https://github.com/VladimirAksenov/chatApp.git
-* cd chat-application
+* cd chatApp
+* mvn clean install
 * docker build -t chat-application .
 * docker-compose up -d
 
