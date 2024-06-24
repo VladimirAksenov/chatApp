@@ -26,8 +26,8 @@
 * git clone https://github.com/VladimirAksenov/chatApp.git
 * cd chatApp
 * mvn clean install
-* docker build -t chat-application .
 * docker-compose up -d
+
 
 ### Документация API
 Документация API доступна через Swagger UI:
