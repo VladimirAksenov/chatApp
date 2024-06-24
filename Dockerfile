@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Копируем файл jar в рабочую директорию
-COPY target/chat-application.jar /app/chat-application.jar
+COPY target/chat-application-0.0.1-SNAPSHOT.jar /app/chat-application.jar
 
 # Устанавливаем порт, который будет слушать приложение
 EXPOSE 8080
