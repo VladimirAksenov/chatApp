@@ -40,4 +40,4 @@
 ![img_1.png](src/main/resources/screenshots/img_1.png)
 
 ### Лицензия
-Этот проект лицензирован на условиях [лицензии MIT](https://choosealicense.com/licenses/mit/).
+Данный проект лицензирован на условиях [лицензии MIT](https://choosealicense.com/licenses/mit/).
