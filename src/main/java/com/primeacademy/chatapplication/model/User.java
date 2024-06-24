@@ -25,18 +25,4 @@ public class User {
     private String password;
     private boolean active;
 
-    @ManyToMany(mappedBy = "users")
-    @ToString.Exclude
-    @JsonBackReference
-    private Set<ChatRoom> chatRooms;
-
-    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
-    @JsonIgnore
-    private Set<Message> sentMessages;
-
-    @OneToMany(mappedBy = "receiver", cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
-    @JsonIgnore
-    private Set<Message> receivedMessages;
 }

@@ -30,9 +30,4 @@ public class ChatRoom {
     @ToString.Exclude
     @JsonManagedReference
     private Set<User> users;
-
-    @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL, orphanRemoval = true)
-    @ToString.Exclude
-    @JsonIgnore
-    private Set<Message> messages;
 }
